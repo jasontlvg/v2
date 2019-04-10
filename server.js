@@ -1,7 +1,7 @@
 const express= require("express");
 const app= express();
 // const serverx= app.listen(8000, '192.168.1.64'); // const server= app.listen(3000, '192.168.0.3');
-const serverx= app.listen(8000, '192.168.0.2'); // const server= app.listen(3000, '192.168.0.3');
+const serverx= app.listen(8000, '138.68.14.62'); // const server= app.listen(3000, '192.168.0.3');
 // WebSocket Socket.IO Code
 const SocketIO = require("socket.io");
 const io= SocketIO(serverx);
