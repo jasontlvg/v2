@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
     
 });
 
+app.get("/hola", (req, res) => {
+    res.end('Hola')
+});
+
 // let objGlobal;
 // objGlobal= {
         
