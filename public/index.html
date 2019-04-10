@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/materialize.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+  </head>
+  <body><nav class=""><img class="arduinologo" src="/img/arduino.svg" alt=""/></nav>
+    <div class="grid_container" id="grid_container">
+      <div class="thumb_title">Arduino Control</div>
+      <div class="thumb_status z-depth-1" id="thumb_status">
+        <p class="thumb_status__status-text">Status Server</p>
+        <p class="thumb_status__status-indicator">{{server_status_data_print}}</p>
+      </div>
+      <div class="thumb_btn z-depth-1 waves-effect waves-light btn-large disabled" id="thumb_btn" v-on:click="btn_status_print">{{btn_status_data}}</div>
+      <div class="thumb_leds z-depth-1" id="thumb_leds">
+        <div class="thumb_leds__led thumb_leds__led--led_1 z-depth-1" id="led_1"></div>
+        <div class="thumb_leds__led thumb_leds__led--led_2 z-depth-1" id="led_2"></div>
+        <div class="thumb_leds__led thumb_leds__led--led_3 z-depth-1" id="led_3"></div>
+      </div>
+      <div class="thumb_motor thumb_motor--1 z-depth-1 motor disabled" id="thumb_motor--1">
+        <p class="thumb_motor__title">Motor Primario</p><circle-slider :side="150" :min="0" :max="255" v-model="motor1_data" class="thumb_motor--1__circle"></circle-slider>
+        <p class="thumb_motor__value">{{motor1_print}}</p>
+      </div>
+      <div class="canvas_container"><canvas id="myChart" class="x"></canvas></div>
+    </div>
+    <!-- Development Versions-->
+    <script src="/js/materialize.js"></script>
+    <script src="/js/vue.js"></script>
+    <!-- Scripts-->
+    <script src="/js/circle.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/Chart.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/wsAntena.js"></script>
+    <script src="/js/script_beta.js"></script>
+  </body>
+</html>
